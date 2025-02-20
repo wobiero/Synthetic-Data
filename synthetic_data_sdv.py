@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime, timedelta
 
-# First, let's create some example real DMD trial data
+# Example Data
 def create_real_data(n_patients=100):
     np.random.seed(42)
     
@@ -38,7 +38,7 @@ real_data = create_real_data(n_patients=100)
 # Define metadata for SDV
 metadata = SingleTableMetadata()
 
-# First detect basic metadata from the dataframe
+# Detect basic metadata from the dataframe
 metadata.detect_from_dataframe(data=real_data)
 
 # Update metadata with specific data types and relationships
@@ -168,7 +168,7 @@ quality_report = evaluate_quality(
 
 print("\nQuality Report:")
 print(quality_report)
-
+# Recheck status on Colab
 # Save data
 real_data.to_csv('real_dmd_data.csv', index=False)
 synthetic_data.to_csv('synthetic_dmd_data.csv', index=False)
